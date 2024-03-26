@@ -26,8 +26,3 @@ ENV MODULE_NAME=app.main
 ENV VARIABLE_NAME=app
 ENV PORT=80
 
-# Uncomment the line below if you have a custom start-up script
-# CMD ["./start.sh"]
-
-# Use the below CMD if you're using the default FastAPI setup
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
