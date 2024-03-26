@@ -13,9 +13,3 @@ RUN pip install --no-cache-dir --upgrade pip && \
 
 # Copy the content of the local app directory to the working directory
 COPY ./app /app/app
-
-# The following is optional and typically included if you have a custom start-up script
-# COPY ./start.sh .
-# RUN chmod +x ./start.sh
-
-CMD uvicorn main:app --port=8000 --host=0.0.0.0
