@@ -18,11 +18,4 @@ COPY ./app /app/app
 # COPY ./start.sh .
 # RUN chmod +x ./start.sh
 
-# Expose the port the app runs on
-EXPOSE 80
-
-# Define environment variable
-ENV MODULE_NAME=app.main
-ENV VARIABLE_NAME=app
-ENV PORT=80
-
+CMD uvicorn main:app --port=8000 --host=0.0.0.0
