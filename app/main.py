@@ -25,7 +25,7 @@ def get_model_path(model_name):
     # Get the absolute path to the directory where main.py is located
     current_directory = os.path.dirname(__file__)
     # Construct the path to the model file
-    return os.path.join(current_directory, '..', 'models', model_name)
+    return os.path.join(current_directory, '.', 'models', model_name)
 
 def predict_sentiment(text: str) -> str:
     # Preprocess the text
