@@ -12,4 +12,4 @@ RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
 # Copy the content of the local app directory to the working directory
-COPY ./app /app/app
+COPY ./app /app
