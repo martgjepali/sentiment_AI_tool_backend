@@ -12,4 +12,6 @@ RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
 # Copy the content of the local app directory to the working directory
-COPY ./app /app
+COPY ./app .
+
+CMD uvicorn main:app --port 8000 --host 0.0.0.0

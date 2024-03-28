@@ -1,9 +1,9 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from .sentiment_analysis.analyzer import preprocess_text
+from sentiment_analysis.analyzer import preprocess_text
 import pickle
-import os
+import os 
 
 app = FastAPI()
 
@@ -49,6 +49,10 @@ def predict_sentiment(text: str) -> str:
     # Map the numerical prediction to a string
     sentiment = 'positive' if prediction[0] == 1 else 'negative'
     return sentiment
+
+@app.get("/")
+def index():
+    return {"details": f"Hello, World! Secret = {os.environ.get('MY_VARIABLE')}"}
 
 @app.post("/sentiment/", response_model=SentimentResponse)
 def get_sentiment(request: SentimentRequest):
